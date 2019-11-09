@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cf5af8e-e268-4adb-9be0-bf967fae6f7b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PromiseBasedScraper/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recursiveCrawler/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ultimateWikiPresidents/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ultimateWikiPresidents/potusParse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ultimateWikiPresidents/potusScraper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ultimateWikiPresidents/withPuppeteer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,11 +16,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/potusScraper.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/potusParse.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/withPuppeteer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PromiseBasedScraper/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+            <state relative-caret-position="198">
+              <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -50,14 +84,18 @@
         <option value="$PROJECT_DIR$/recursiveCrawler/index.js" />
         <option value="$PROJECT_DIR$/imdbCrawlr/index.js" />
         <option value="$PROJECT_DIR$/PromiseBasedScraper/index.js" />
+        <option value="$PROJECT_DIR$/ultimateWikiPresidents/index.js" />
+        <option value="$PROJECT_DIR$/ultimateWikiPresidents/potusScraper.js" />
+        <option value="$PROJECT_DIR$/ultimateWikiPresidents/potusParse.js" />
+        <option value="$PROJECT_DIR$/ultimateWikiPresidents/withPuppeteer.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="167" />
-    <option name="y" value="310" />
-    <option name="width" value="1717" />
-    <option name="height" value="922" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2034" />
+    <option name="y" value="32" />
+    <option name="width" value="1707" />
+    <option name="height" value="929" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -70,6 +108,16 @@
             <path>
               <item name="advanced-nodejs-practice" type="b2602c69:ProjectViewProjectNode" />
               <item name="advanced-nodejs-practice" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advanced-nodejs-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-nodejs-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="PromiseBasedScraper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advanced-nodejs-practice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-nodejs-practice" type="462c0819:PsiDirectoryNode" />
+              <item name="ultimateWikiPresidents" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -96,6 +144,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="potusScraper.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/ultimateWikiPresidents/potusScraper.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.potusScraper.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -107,24 +165,25 @@
       <option name="presentableId" value="Default" />
       <updated>1573227204201</updated>
       <workItem from="1573227205701" duration="2639000" />
-      <workItem from="1573234382080" duration="2730000" />
+      <workItem from="1573234382080" duration="9050000" />
+      <workItem from="1573295553280" duration="1557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5369000" />
+    <option name="totallyTimeSpent" value="13246000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="31" width="1920" height="995" extended-state="6" />
+    <frame x="1920" y="31" width="1920" height="995" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2529412" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25614974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39976552" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -133,7 +192,7 @@
       <window_info anchor="bottom" id="GraphQL" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Graph Database Console" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.46072686" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.28370458" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -188,10 +247,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/PromiseBasedScraper/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+        <state relative-caret-position="198">
+          <caret line="9" column="2" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/potusScraper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="10" lean-forward="true" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/potusParse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ultimateWikiPresidents/withPuppeteer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="26" lean-forward="true" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
         </state>
       </provider>
     </entry>
