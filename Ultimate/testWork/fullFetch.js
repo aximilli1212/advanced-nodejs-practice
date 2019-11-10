@@ -3,7 +3,7 @@ const $ = require('cheerio');
 
 //FIND ALL LINKS THAT MATCH THE GIVEN REGEX
 
-const allIn = dset =>{
+const fetchLinks = dset =>{
     const prepareLink = (ln)=>{
         // Trim and append domain to orphaned links eg:'/profile'
         return ln.trim().startsWith('http') ? ln : `${dset.url}${ln}`;
@@ -28,7 +28,7 @@ const allIn = dset =>{
     })
 }
 
-module.exports = allIn;
+module.exports = fetchLinks;
 
 
 
