@@ -1,11 +1,11 @@
 const cheerio = require('cheerio');
-const rp = require('request-promise');
+var chalk = require( "chalk" );
+const request = require('request-promise');
 const fs = require('fs');
 var ndjson = require( "ndjson" );
 
-const URLS = [{url:"https://www.imdb.com/title/tt6811018/?ref_=ttls_li_tt",
-                     id:1},
-               {url:"https://www.imdb.com/title/tt0240772/", id:2} 
+const URLS = ["https://www.imdb.com/title/tt6811018/?ref_=ttls_li_tt",
+               "https://www.imdb.com/title/tt0240772/" 
 ];
 
 console.log('running now');
@@ -13,8 +13,8 @@ console.log('running now');
 (async ()=>{
     let moviesData = [];
     for(let movie of URLS){
-        const response = await rp({ 
-            uri:movie.url,
+        const response = await request({
+            uri:movie,
             headers:{
                 'Host': 'www.imdb.com',
                 'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0',
@@ -41,16 +41,37 @@ console.log('running now');
                genre,
                director,
            })
-
-           // downloading from website
-    let file = fs.createWriteStream(`${movie.id}.jpg`);
     }
 
+    fs.writeFileSync('./data.json', JSON.stringify(moviesData), 'utf-8');
     
 
-    // fs.writeFileSync('./ndata.ndjson', JSON.stringify(moviesData), 'utf-8');
-    // fs.writeFileSync('./ndata.ndjson', JSON.stringify(moviesData), 'utf-8');
-    // console.log(moviesData);
+        //  Save response into an ndJson file
+
+            var transformStream = ndjson.stringify();
+
+            var outputStream = transformStream.pipe( fs.createWriteStream( __dirname + "/ndata.ndjson" ) );
+            // Iterate over the records and write EACH ONE to the TRANSFORM stream individually.
+            moviesData.forEach(
+                function iterator( record ) {
+                    transformStream.write( record );
+                }
+            );
+             //close sream
+            transformStream.end();
+
+            // Once ndjson has flushed all data to the output stream, let's indicate done.
+            outputStream.on(
+                "finish",
+                function handleFinish() {
+
+                    console.log( chalk.green( "ndjson serialization complete!" ) );
+                    console.log( "- - - - - - - - - - - - - - - - - - - - - - -" );
+
+                }
+);
+
+
+    console.log(moviesData);
     
 })();
-
