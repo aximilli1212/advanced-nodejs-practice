@@ -1,1 +1,7 @@
-{"regex":"\"/qbe/i\"","links":[{"url":"http://dff.qbelimited.com/"}]}
+{"regex":"\"/a/i\"","links":[]}
+{"regex":"\"/as/i\"","links":[]}
+{"regex":"\"/a/i\"","links":[{"url":"http://google.com/maps"},{"url":"http://google.com/mail/"},{"url":"http://google.com/calendar"},{"url":"http://google.com/advanced_search"},{"url":"http://google.com/language_tools"},{"url":"http://google.com/intl/en/about.html"},{"url":"http://google.com/setprefdomain"}]}
+{"regex":"\"/as/i\"","links":[]}
+{"regex":"\"/a/i\"","links":[{"url":"http://google.com/signin/usernamerecovery"},{"url":"http://google.com/AccountChooser"},{"url":"http://google.com/intl/en-GB/about"},{"url":"http://google.com/support/accounts"}]}
+{"regex":"\"/a/i\"","links":[{"url":"http://google.com/signin/usernamerecovery"},{"url":"http://google.com/AccountChooser"},{"url":"http://google.com/intl/en-GB/about"},{"url":"http://google.com/support/accounts"}]}
+{"regex":"\"/a/i\"","links":[]}

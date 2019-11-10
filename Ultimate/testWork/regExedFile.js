@@ -1,18 +1,18 @@
 const fetchLinks = require('./fullFetch');
-var events = require('events');
+const events = require('events');
 const fs = require('fs');
-var ndjson = require( "ndjson" );
+const ndjson = require( "ndjson" );
+const em = new events.EventEmitter();
 
-//create an object of EventEmitter class by using above reference
-var em = new events.EventEmitter();
-
-// const url = "http://www.qbelimited.com";
-const url = "http://dff.qbelimited.com";
+// const url = "https://www.meltwater.org";
+// const url = "http://www.facebook.com/";
+const url = "http://google.com";
+// const url = "http://dff.qbelimited.com";
 const domain = new URL(url).origin;
-let reqData = {url:url,rex:/qbe/i,depth:3};
+let reqData = {url:url,rex:[/a/i,/as/i],depth:3};
 
      // Remove Duplicates from returned links
-    const getUniqueLinks = (arrayObj)=>{
+const getUniqueLinks = (arrayObj)=>{
      return arrayObj.filter((link, index) => {
         const _link = JSON.stringify(link);
         return index === arrayObj.findIndex(obj => {
@@ -24,7 +24,7 @@ let reqData = {url:url,rex:/qbe/i,depth:3};
     // Save response into a ndjson.json file
 const createNdjson = (data)=>{
      var transformStream = ndjson.stringify();
-     var outputStream = transformStream.pipe( fs.createWriteStream( __dirname + "/ndata.ndjson" ) );
+     var outputStream = transformStream.pipe( fs.createWriteStream( __dirname + "/ndata.ndjson",{flags:"a"} ) );
      // Iterate over the records and write EACH ONE to the TRANSFORM stream individually.
      data.forEach(
          function iterator( record ) {
@@ -33,14 +33,14 @@ const createNdjson = (data)=>{
      );
       //close stream
      transformStream.end();
-    }
+}
 
-    //Raw split and filter Urls for crawl
-    const urlPath = (u,d)=>{
+    //Raw split for Crawl Depth
+const urlPath = (u,d)=>{
      const urlObject = new URL(u);
     let pathString = urlObject.pathname;
     return pathString.split('/').length - 1 <= d  ? pathString : null ;
-    };
+};
 
     // Recursive Crawl webpages
 em.on('crawlHere',(dset)=>{
@@ -49,7 +49,7 @@ em.on('crawlHere',(dset)=>{
         for(let i = 0; i <= dset.depth; i++){ //getting depth links
             for(let singleLink of response){
                 let newLevel = urlPath(singleLink,dset.depth); // raw split with slash as delimiter
-                if(newLevel){
+                if(newLevel && newLevel.match(dset.rex)){ //check for lin
                     dataSet.push({url:domain+newLevel});
                 }
             }
@@ -57,12 +57,19 @@ em.on('crawlHere',(dset)=>{
 
        let slimSet = getUniqueLinks(dataSet);
 
-       console.log(slimSet);
-        createNdjson([{regex:`"${dset.rex}"`,links:slimSet}]);
+       createNdjson([{regex:`"${dset.rex}"`,links:slimSet}]);
+        console.log(slimSet);
         console.log({count:slimSet.length});
+
+        for(let clink of slimSet){
+           em.emit('crawlHere',{url:clink,rex:dset.rex,depth:dset.depth});
+        }
+       
     }).catch(err=>{
         console.log(err);
     });
-})
-
-em.emit('crawlHere',reqData);
+});
+let regX = reqData.rex;
+for(let r of regX){
+    em.emit('crawlHere',{url:reqData.url,rex:r,depth:reqData.depth});  
+}
